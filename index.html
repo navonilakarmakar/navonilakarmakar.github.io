@@ -70,7 +70,7 @@
       letter-spacing: 0.12em;
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 0.75rem;
       font-weight: 500;
@@ -81,6 +81,23 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--bright); }
+    .nav-cv {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      text-decoration: none;
+      transition: all 0.2s !important;
+      background: rgba(232,201,122,0.05);
+    }
+    .nav-cv:hover {
+      background: var(--gold-dim) !important;
+      color: var(--bright) !important;
+      border-color: var(--bright) !important;
+    }
 
     /* ══ HERO ═══════════════════════════════════════════════════════ */
     #hero {
@@ -191,6 +208,20 @@
       display: inline-block;
     }
     .btn-ghost:hover { border-color: var(--nebula); color: var(--nebula); }
+    .btn-cv {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.8rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+      background: rgba(232,201,122,0.04);
+    }
+    .btn-cv:hover { background: var(--gold-dim); color: var(--bright); border-color: var(--bright); transform: translateY(-2px); }
 
     /* scroll cue */
     .scroll-cue {
@@ -259,7 +290,6 @@
     }
     .exp-item:last-child { border-bottom: none; }
 
-    /* timeline dot */
     .exp-item::before {
       content: '';
       position: absolute;
@@ -272,7 +302,6 @@
       z-index: 2;
     }
 
-    /* vertical line */
     .exp-item::after {
       content: '';
       position: absolute;
@@ -340,7 +369,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-bottom: 1.1rem;
     }
     .exp-tag {
       font-family: var(--font-mono);
@@ -350,27 +378,6 @@
       color: var(--subdued);
       letter-spacing: 0.06em;
       border-radius: 2px;
-    }
-
-    .exp-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .exp-link {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(232,201,122,0.3);
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .exp-link:hover { color: var(--bright); border-color: var(--bright); }
-    .exp-link-placeholder {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      font-style: italic;
-      cursor: default;
     }
 
     /* ══ EDUCATION ══════════════════════════════════════════════════ */
@@ -550,12 +557,11 @@
 </head>
 <body>
 
-<!-- ═══ NEBULA BACKGROUND CANVAS ════════════════════════════════════ -->
 <canvas id="bg-canvas"></canvas>
 
 <!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
 <nav>
-  <a class="nav-logo" href="#hero">NK ⟋</a>
+  <a class="nav-logo" href="#hero">Navonila ⟋</a>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
@@ -563,22 +569,23 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#conferences">Conferences</a></li>
+    <!-- Replace href with actual CV PDF path, e.g. href="cv_navonila_karmakar.pdf" -->
+    <li><a class="nav-cv" href="cv_navonila_karmakar.pdf" target="_blank">↓ CV</a></li>
   </ul>
 </nav>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero">
-  <p class="hero-tag">Computational Astrophysics · Gravitational Waves · Star Formation</p>
+  <p class="hero-tag">Computational Astrophysics · Observational Astronomy · Gravitational Wave</p>
   <h1 class="hero-name">Navonila<br><span>Karmakar</span></h1>
   <p class="hero-subtitle">Final Year BS-MS Physics Student</p>
   <p class="hero-bio">
-    Currently at Max Planck Institute for Astrophysics, Garching, simulating how gas clouds
-    survive in galactic winds. Previously working on gravitational-wave glitch mitigation
-    at Portsmouth and star cluster photometry at ARIES Nainital. Based between Garching and Kolkata.
+    Currently working at Max Planck Institute for Astrophysics, Garching and
+    studying at Indian Institute of Science Education and Research, Kolkata.
   </p>
   <div class="hero-contacts">
-    <a class="chip" href="tel:+917001407912">+91 700 140 7912</a>
-    <a class="chip" href="tel:+4915510752741">+49 155 107 52741</a>
+    <a class="chip" href="tel:+917001407912">+91 7001407912</a>
+    <a class="chip" href="tel:+4915510752741">+49 15510752741</a>
     <a class="chip" href="mailto:navonilakarmakar@gmail.com">navonilakarmakar@gmail.com</a>
     <a class="chip" href="mailto:karmakar@MPA-Garching.MPG.DE">karmakar@MPA-Garching.MPG.DE</a>
     <a class="chip" href="mailto:nk22ms040@iiserkol.ac.in">nk22ms040@iiserkol.ac.in</a>
@@ -586,6 +593,8 @@
   </div>
   <div class="cta-row">
     <a class="btn-primary" href="#research">View Research ↓</a>
+    <!-- Replace href with actual CV PDF path -->
+    <a class="btn-cv" href="cv_navonila_karmakar.pdf" target="_blank">Download CV ↓</a>
     <a class="btn-ghost" href="mailto:navonilakarmakar@gmail.com">Get in Touch</a>
   </div>
   <div class="scroll-cue">Scroll</div>
@@ -601,19 +610,19 @@
     <!-- 1 -->
     <div class="exp-item">
       <div class="exp-meta">
-        <p class="exp-period">06/2026 –<br>Present</p>
+        <p class="exp-period">June 2026 –<br>Present</p>
         <p class="exp-type">MS Thesis</p>
       </div>
       <div class="exp-body">
         <p class="exp-role">Hydrodynamic Cloud–Wind Simulations</p>
-        <p class="exp-institute">Max Planck Institute for Astrophysics (MPA), Garching, Germany</p>
+        <p class="exp-institute">Max Planck Institute for Astrophysics, Garching, Germany</p>
         <p class="exp-supervisor">Supervisors: Prof. Dr. Volker Springel &amp; Dr. Alankar Dutta<br>
-        Computational Astrophysics &amp; Galaxy Formation and Evolution Research Groups</p>
+        Research Groups: Computational Astrophysics &amp; Galaxy Formation and Evolution</p>
         <p class="exp-desc">
           MS thesis project focused on hydrodynamic simulations of gas clouds under realistic galactic wind conditions,
           incorporating multi-cloud interactions. The goal is to develop robust theoretical predictions for cloud survival
           timescales, cloud morphological evolution, and the role of cloud–cloud interactions in shaping the circumgalactic
-          medium. Work involves running and analysing simulations with <em>OpenGadget3</em> and <em>PLUTO</em>,
+          medium. Work involves running and analysing simulations with <em>PLUTO</em> and <em>Arepo</em>,
           post-processing with <em>ParaView</em>, and comparing results against analytic cloud-crushing models.
         </p>
         <div class="exp-tags">
@@ -625,30 +634,26 @@
           <span class="exp-tag">Galaxy Formation</span>
           <span class="exp-tag">CGM</span>
         </div>
-        <div class="exp-links">
-          <span class="exp-link-placeholder">→ Report / Presentation link — add when available</span>
-        </div>
       </div>
     </div>
 
     <!-- 2 -->
     <div class="exp-item">
       <div class="exp-meta">
-        <p class="exp-period">05/2025 –<br>Present</p>
+        <p class="exp-period">May 2025 –<br>Present</p>
         <p class="exp-type">Remote Intern</p>
       </div>
       <div class="exp-body">
-        <p class="exp-role">Infrared Photometry of Stellar Cluster Barba 2</p>
+        <p class="exp-role">Stellar Content of Newly Discovered Cluster Barba 2</p>
         <p class="exp-institute">European Southern Observatory (ESO), Garching, Germany</p>
         <p class="exp-supervisor">Supervisor: Dr. Morten Andersen</p>
         <p class="exp-desc">
-          Characterising the intermediate and low-mass stellar content of Barba 2, a newly discovered supergiant-rich
-          Galactic cluster. Imaging data in H and Ks bands from <em>Gemini FLAMINGOS-2</em> were reduced using
-          the <em>Dragons-Flamingos2</em> pipeline and <em>Astropy</em>. Performed aperture photometry on cluster
-          members using <em>photutils</em>, calibrated against 2MASS photometric standards. Ongoing work includes
+          Project focused on characterising the intermediate and low-mass stellar content of Barba 2, a supergiant-
+          rich Galactic cluster. Imaging data in H and Ks bands from <em>Gemini FLAMINGOS-2</em> were reduced using
+          the <em>Dragons-Flamingos2</em> pipeline and <em>Astropy</em>. Aperture photometry was performed on detected
+          stars using <em>photutils</em> with calibration against 2MASS photometric standards. Ongoing work involves
           determining individual stellar masses and cluster age from the pre-main-sequence turn-on mass, quantifying
-          mass segregation via variations in the derived Mass Function, and constructing a complete census of cluster
-          membership.
+          mass segregation via variations in the derived Mass Function, etc.
         </p>
         <div class="exp-tags">
           <span class="exp-tag">Gemini F2</span>
@@ -659,24 +664,49 @@
           <span class="exp-tag">IR Photometry</span>
           <span class="exp-tag">Stellar Clusters</span>
         </div>
-        <div class="exp-links">
-          <span class="exp-link-placeholder">→ Report link — add when available</span>
-        </div>
       </div>
     </div>
 
     <!-- 3 -->
     <div class="exp-item">
       <div class="exp-meta">
-        <p class="exp-period">05/2025 –<br>08/2025</p>
-        <p class="exp-type">LIGO GET-GO Fellow</p>
+        <p class="exp-period">April 2026 –<br>May 2026</p>
+        <p class="exp-type">Semester Project</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Structural &amp; Morphological Analysis of Galaxies</p>
+        <p class="exp-institute">IISER Kolkata</p>
+        <p class="exp-supervisor">Astronomy Lab Course Project</p>
+        <p class="exp-desc">
+          Comprehensive morphological study of three galaxies representing different Hubble types: NGC 2967 (Sc spiral),
+          NGC 3351 (SBb barred spiral), and NGC 3379 (E1 elliptical). SDSS SkyServer data were processed to obtain
+          surface brightness profiles, model fitting, error and noise analysis, CAS morphological parameters determination,
+          isophote analysis, global Fourier analysis (2D FFT), radial Fourier analysis (Annular 1D FFT), correlation
+          and statistical analysis, radial structural decomposition, and final comparative classification.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">SDSS</span>
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">CAS Parameters</span>
+          <span class="exp-tag">Isophote Analysis</span>
+          <span class="exp-tag">FFT</span>
+          <span class="exp-tag">Galaxy Morphology</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-period">May 2025 –<br>August 2025</p>
+        <p class="exp-type">Summer Research Intern</p>
       </div>
       <div class="exp-body">
         <p class="exp-role">Glitch Mitigation in Precessing GW Searches</p>
         <p class="exp-institute">Institute of Gravitation and Cosmology, University of Portsmouth, UK</p>
         <p class="exp-supervisor">Supervisors: Prof. Laura Nuttall &amp; Dr. Rahul Dhurkunde</p>
         <p class="exp-desc">
-          Fellowship project on mitigating the effect of instrumental glitches in searches for gravitational waves from
+          Summer project on mitigating the effect of instrumental glitches in searches for gravitational waves from
           precessing compact binary systems. Gained hands-on experience with matched filtering, signal consistency tests,
           coincident detection, and ranking statistics using <em>PyCBC</em>. Studied the mathematical formalism of harmonic
           decomposition of precessing waveforms and the construction of precessing template banks. Conducted precessing
@@ -692,58 +722,22 @@
           <span class="exp-tag">LIGO O3</span>
           <span class="exp-tag">Python</span>
         </div>
-        <div class="exp-links">
-          <!-- Replace # with your actual presentation URL -->
-          <a class="exp-link" href="#" target="_blank">↗ Conference Presentation (Glasgow, 07/2025)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <p class="exp-period">04/2026 –<br>05/2026</p>
-        <p class="exp-type">Semester Project</p>
-      </div>
-      <div class="exp-body">
-        <p class="exp-role">Structural &amp; Morphological Analysis of Galaxies</p>
-        <p class="exp-institute">IISER Kolkata — Astronomy Lab Course</p>
-        <p class="exp-supervisor">Course Project</p>
-        <p class="exp-desc">
-          Comprehensive morphological study of three galaxies representing different Hubble types: NGC 2967 (Sc spiral),
-          NGC 3351 (SBb barred spiral), and NGC 3379 (E1 elliptical). SDSS SkyServer data were processed to obtain
-          surface brightness profiles, model fitting, error and noise analysis, CAS morphological parameters,
-          isophote analysis, global Fourier analysis (2D FFT), radial Fourier analysis (Annular 1D FFT), correlation
-          and statistical analysis, radial structural decomposition, and final comparative classification.
-        </p>
-        <div class="exp-tags">
-          <span class="exp-tag">SDSS</span>
-          <span class="exp-tag">Python</span>
-          <span class="exp-tag">CAS Parameters</span>
-          <span class="exp-tag">Isophote Analysis</span>
-          <span class="exp-tag">FFT</span>
-          <span class="exp-tag">Galaxy Morphology</span>
-        </div>
-        <div class="exp-links">
-          <!-- Replace # with your actual report URL -->
-          <a class="exp-link" href="#" target="_blank">↗ Project Report</a>
-        </div>
       </div>
     </div>
 
     <!-- 5 -->
     <div class="exp-item">
       <div class="exp-meta">
-        <p class="exp-period">05/2024 –<br>07/2024</p>
-        <p class="exp-type">IASc-INSA-NASI Fellow</p>
+        <p class="exp-period">May 2024 –<br>July 2024</p>
+        <p class="exp-type">Summer Research Intern</p>
       </div>
       <div class="exp-body">
         <p class="exp-role">Star Formation in Young Cluster NGC 2316</p>
         <p class="exp-institute">Aryabhatta Research Institute of Observational Sciences (ARIES), Nainital, India</p>
         <p class="exp-supervisor">Supervisor: Dr. Saurabh</p>
         <p class="exp-desc">
-          Observational study of star formation in the young open cluster NGC 2316, using the 3.6 m Devasthal Optical
-          Telescope with imaging and spectroscopy via <em>TANSPEC</em>. Performed UVBRI PSF photometry of cluster
+          Observational study of star formation in the young stellar cluster NGC 2316, using the 3.6 m Devasthal Optical
+          Telescope with imaging and spectroscopy with <em>TANSPEC</em>. Performed UVBRI PSF photometry of cluster
           stars using <em>DAOPHOT II</em>, calibrated with Landolt standard SA 98 to determine true stellar magnitudes.
           Conducted a 2MASS near-infrared photometric study for cluster identification, kinematic membership analysis
           from <em>GAIA</em> proper motion data, and astrometry using <em>IRAF</em>, GAIA Tool, and WCSTools.
@@ -759,23 +753,19 @@
           <span class="exp-tag">PSF Photometry</span>
           <span class="exp-tag">Isochrone Fitting</span>
         </div>
-        <div class="exp-links">
-          <!-- Replace # with your actual report URL -->
-          <a class="exp-link" href="#" target="_blank">↗ Project Report</a>
-        </div>
       </div>
     </div>
 
     <!-- 6 -->
     <div class="exp-item">
       <div class="exp-meta">
-        <p class="exp-period">07/2023</p>
+        <p class="exp-period">July 2023</p>
         <p class="exp-type">Summer Intern</p>
       </div>
       <div class="exp-body">
         <p class="exp-role">Stellar Evolution — Interstellar Cloud to Black Holes and Pulsars</p>
         <p class="exp-institute">Department of Physical Sciences &amp; CESSI, IISER Kolkata</p>
-        <p class="exp-supervisor">Supervisor: Prof. Sudip Kumar Garain</p>
+        <p class="exp-supervisor">Supervisor: Dr. Sudip Kumar Garain</p>
         <p class="exp-desc">
           Comprehensive literature review covering the full lifecycle of stars: collapse of interstellar molecular clouds,
           protostar formation, main-sequence evolution, late-stage mass loss, and the formation of compact remnants
@@ -785,10 +775,6 @@
           <span class="exp-tag">Stellar Evolution</span>
           <span class="exp-tag">Compact Objects</span>
           <span class="exp-tag">Literature Review</span>
-        </div>
-        <div class="exp-links">
-          <!-- Replace # with your actual report URL -->
-          <a class="exp-link" href="#" target="_blank">↗ Report</a>
         </div>
       </div>
     </div>
@@ -808,7 +794,7 @@
         <p class="edu-school">Indian Institute of Science Education and Research (IISER), Kolkata</p>
       </div>
       <p class="edu-grade">CGPA 8.0</p>
-      <p class="edu-period">10/2022 – Present</p>
+      <p class="edu-period">October 2022 – Present</p>
       <p class="edu-courses">Classical &amp; Quantum Mechanics · Mathematical Physics · Thermodynamics &amp; Statistical Physics · Electrodynamics · Computational Physics · Nuclear Physics · General Relativity · Quantum Field Theory · Condensed Matter Theory · Introductory Astrophysics &amp; Cosmology · Fluid Dynamics &amp; MHD · Advanced Optics · Astronomy Lab</p>
     </div>
 
@@ -818,7 +804,7 @@
         <p class="edu-school">Bishnupur High School</p>
       </div>
       <p class="edu-grade">93.8%</p>
-      <p class="edu-period">08/2020 – 06/2022</p>
+      <p class="edu-period">2020 – 2022</p>
     </div>
 
     <div class="edu-item">
@@ -827,7 +813,7 @@
         <p class="edu-school">Shibdas Central Girls' High School</p>
       </div>
       <p class="edu-grade">93.8%</p>
-      <p class="edu-period">01/2014 – 07/2020</p>
+      <p class="edu-period">2014 – 2020</p>
     </div>
 
   </div>
@@ -869,6 +855,7 @@
       <div class="skill-tags">
         <span class="skill-tag">PLUTO</span><span class="skill-tag">MESA</span>
         <span class="skill-tag">ParaView</span><span class="skill-tag">OpenGadget3</span>
+        <span class="skill-tag">Arepo</span>
       </div>
     </div>
     <div class="skill-group">
@@ -899,7 +886,7 @@
       <div>
         <p class="award-title">MPG-IISER MS Project Research Fellow</p>
         <p class="award-body">Selected through the MPA Internship programme and MPG-IISER programme. Fellowship sponsored by Max Planck Institute for Astrophysics, Garching.</p>
-        <p class="award-period">06/2026 – Present</p>
+        <p class="award-period">June 2026 – Present</p>
       </div>
     </div>
     <div class="award-item">
@@ -907,7 +894,7 @@
       <div>
         <p class="award-title">LIGO GET-GO Summer Research Fellow</p>
         <p class="award-body">Gravitational-wave detector Expertise and Technology-GrOwth (GET-GO) fellowship from University of Glasgow, selected through the LIGO SURF programme.</p>
-        <p class="award-period">05/2025 – 08/2025</p>
+        <p class="award-period">May 2025 – August 2025</p>
       </div>
     </div>
     <div class="award-item">
@@ -915,7 +902,7 @@
       <div>
         <p class="award-title">IASc-INSA-NASI Summer Research Fellow</p>
         <p class="award-body">Summer Research Fellowship Programme (SRFP) sponsored jointly by the Indian Academy of Sciences (Bangalore), Indian National Science Academy (New Delhi), and National Academy of Sciences, India (Prayagraj).</p>
-        <p class="award-period">05/2024 – 07/2024</p>
+        <p class="award-period">May 2024 – July 2024</p>
       </div>
     </div>
     <div class="award-item">
@@ -923,7 +910,7 @@
       <div>
         <p class="award-title">Silver Honour (Youth) — IAAC</p>
         <p class="award-body">International Astronomy and Astrophysics Competition.</p>
-        <p class="award-period">06/2023</p>
+        <p class="award-period">June 2023</p>
       </div>
     </div>
     <div class="award-item">
@@ -931,7 +918,7 @@
       <div>
         <p class="award-title">Bronze Medalist (Senior) — National Level Astrophysics Quiz</p>
         <p class="award-body">IAPT and A.P.J. Abdul Kalam National Council of Young Scientists.</p>
-        <p class="award-period">09/2021</p>
+        <p class="award-period">September 2021</p>
       </div>
     </div>
   </div>
@@ -944,7 +931,6 @@
   <div class="conf-list">
     <div class="conf-item"><span class="conf-name">PLUTO/OpenGadget3 Symposium, Heidelberg</span><span class="conf-date">06/2026</span></div>
     <div class="conf-item"><span class="conf-name">CMF2IMF — Origin of the Stellar IMF, ESO Garching</span><span class="conf-date">06/2026</span></div>
-    <div class="conf-item"><span class="conf-name">Cosmology, Astrophysics &amp; Astronomy Special Lecture Series, Kolkata</span><span class="conf-date">03/2026</span></div>
     <div class="conf-item"><span class="conf-name">Beyond LIGO-India: Deci-Hz GW Space Mission, IISER Kolkata</span><span class="conf-date">03/2026</span></div>
     <div class="conf-item"><span class="conf-name">Glorious Women Online Symposium</span><span class="conf-date">03/2026</span></div>
     <div class="conf-item"><span class="conf-name">LIGO GET-GO Student Conference, University of Glasgow <em>(Presentation)</em></span><span class="conf-date">07/2025</span></div>
@@ -967,142 +953,251 @@
   <p class="footer-note">MPA Garching · IISER Kolkata · 2026</p>
 </footer>
 
-<!-- ═══ NEBULA + STAR BACKGROUND SCRIPT ════════════════════════════ -->
+<!-- ═══ ENHANCED NEBULA + DEEP SPACE BACKGROUND ════════════════════ -->
 <script>
-(function() {
+(function () {
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
-  let W, H, stars = [], nebulae = [], animId;
+  let W, H, stars = [], dustLanes = [], nebulae = [], clusters = [], animId;
+  let time = 0;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    buildNebulae();
-    buildStars();
+    buildScene();
   }
 
-  /* ── Nebula blobs ─────────────────────────────────────────────── */
+  /* ── Deep-field star clusters (tight dense patches) ──────────── */
+  function buildClusters() {
+    clusters = [
+      { x: W * 0.68, y: H * 0.22, count: 60, spread: 60, bright: 0.55 },
+      { x: W * 0.15, y: H * 0.75, count: 40, spread: 45, bright: 0.4 },
+      { x: W * 0.88, y: H * 0.65, count: 35, spread: 40, bright: 0.45 },
+    ];
+  }
+
+  /* ── Dust lane paths (dark silhouettes crossing nebulae) ──────── */
+  function buildDustLanes() {
+    dustLanes = [
+      { points: [[W*0.55, H*0.0], [W*0.62, H*0.25], [W*0.50, H*0.45], [W*0.58, H*0.65]], width: 38 },
+      { points: [[W*0.0,  H*0.4], [W*0.18, H*0.52], [W*0.30, H*0.48]], width: 22 },
+    ];
+  }
+
+  /* ── Layered nebula blobs ─────────────────────────────────────── */
   function buildNebulae() {
     nebulae = [
-      // large deep-violet cloud top-right
-      { x: W * 0.82, y: H * 0.18, rx: W * 0.38, ry: H * 0.32,
-        stops: [ [0, 'rgba(100,70,180,0.18)'], [0.45,'rgba(60,40,140,0.10)'], [1,'rgba(0,0,0,0)'] ] },
-      // blue-cyan tendril centre-left
-      { x: W * 0.22, y: H * 0.55, rx: W * 0.30, ry: H * 0.28,
-        stops: [ [0, 'rgba(60,110,220,0.14)'], [0.5,'rgba(40,80,180,0.07)'], [1,'rgba(0,0,0,0)'] ] },
-      // warm hydrogen-orange glow bottom-centre
-      { x: W * 0.52, y: H * 0.88, rx: W * 0.26, ry: H * 0.22,
-        stops: [ [0, 'rgba(200,90,50,0.10)'], [0.5,'rgba(160,60,30,0.05)'], [1,'rgba(0,0,0,0)'] ] },
-      // subtle teal accent top-left
-      { x: W * 0.08, y: H * 0.12, rx: W * 0.20, ry: H * 0.18,
-        stops: [ [0, 'rgba(40,160,160,0.09)'], [0.5,'rgba(20,120,130,0.04)'], [1,'rgba(0,0,0,0)'] ] },
+      // large violet-indigo emission region top-right
+      { x: W*0.80, y: H*0.16, rx: W*0.42, ry: H*0.38,
+        stops: [[0,'rgba(90,55,200,0.22)'],[0.35,'rgba(60,35,160,0.13)'],[0.7,'rgba(30,15,90,0.06)'],[1,'rgba(0,0,0,0)']] },
+      // secondary magenta tendril centre-right
+      { x: W*0.72, y: H*0.50, rx: W*0.28, ry: H*0.30,
+        stops: [[0,'rgba(170,60,140,0.13)'],[0.4,'rgba(120,40,100,0.07)'],[1,'rgba(0,0,0,0)']] },
+      // cyan-blue cloud left
+      { x: W*0.20, y: H*0.50, rx: W*0.34, ry: H*0.32,
+        stops: [[0,'rgba(40,100,210,0.16)'],[0.45,'rgba(25,70,170,0.08)'],[1,'rgba(0,0,0,0)']] },
+      // warm H-alpha glow bottom-centre
+      { x: W*0.50, y: H*0.90, rx: W*0.30, ry: H*0.26,
+        stops: [[0,'rgba(200,75,45,0.12)'],[0.5,'rgba(160,50,28,0.06)'],[1,'rgba(0,0,0,0)']] },
+      // teal accent upper-left
+      { x: W*0.06, y: H*0.10, rx: W*0.22, ry: H*0.20,
+        stops: [[0,'rgba(35,150,155,0.10)'],[0.5,'rgba(20,110,120,0.05)'],[1,'rgba(0,0,0,0)']] },
+      // deep gold pillar mid-left
+      { x: W*0.30, y: H*0.30, rx: W*0.14, ry: H*0.22,
+        stops: [[0,'rgba(200,155,40,0.08)'],[0.5,'rgba(160,120,30,0.04)'],[1,'rgba(0,0,0,0)']] },
     ];
   }
 
   /* ── Stars ────────────────────────────────────────────────────── */
   function buildStars() {
-    const N = Math.floor((W * H) / 3200);
+    const N = Math.floor((W * H) / 2600);
     stars = Array.from({ length: N }, () => {
-      const size = Math.random();
+      const tier = Math.random();
+      const r = tier < 0.65 ? 0.35 + Math.random() * 0.45
+               : tier < 0.88 ? 0.85 + Math.random() * 0.65
+               : tier < 0.97 ? 1.5  + Math.random() * 1.0
+               : 2.2 + Math.random() * 1.4;          // rare bright giants
+      // cluster placement — some stars biased toward cluster positions
+      let x, y;
+      const inCluster = Math.random() < 0.18 && clusters.length;
+      if (inCluster) {
+        const c = clusters[Math.floor(Math.random() * clusters.length)];
+        const ang = Math.random() * Math.PI * 2;
+        const dist = Math.pow(Math.random(), 0.6) * c.spread;
+        x = c.x + Math.cos(ang) * dist;
+        y = c.y + Math.sin(ang) * dist;
+      } else {
+        x = Math.random() * W;
+        y = Math.random() * H;
+      }
+      const spectral = Math.random();
+      const hue = spectral < 0.18 ? '#ffd0b0'   // K/M orange-red
+                : spectral < 0.38 ? '#fff4e0'   // G yellow-white
+                : spectral < 0.65 ? '#eef2ff'   // A white
+                : spectral < 0.88 ? '#c8d8ff'   // B blue-white
+                : '#aac8ff';                     // O deep blue
       return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: size < 0.7 ? 0.4 + Math.random() * 0.5
-           : size < 0.92 ? 0.9 + Math.random() * 0.6
-           : 1.5 + Math.random() * 1.2,
-        a: 0.3 + Math.random() * 0.7,
-        da: (Math.random() - 0.5) * 0.0015,
-        // subtle colour temperature
-        hue: Math.random() < 0.5 ? '#dde5ff'
-           : Math.random() < 0.5 ? '#ffeedd'
-           : '#c8d8ff',
-        twinkleSpeed: 0.0008 + Math.random() * 0.002,
+        x, y, r,
+        a: 0.25 + Math.random() * 0.75,
+        da: (Math.random() - 0.5) * 0.0018,
+        hue,
+        twinkleOffset: Math.random() * Math.PI * 2,
+        twinkleSpeed: 0.0006 + Math.random() * 0.0022,
+        drift: Math.random() < 0.04 ? { vx: (Math.random()-0.5)*0.04, vy: (Math.random()-0.5)*0.02 } : null,
       };
     });
   }
 
-  /* ── Occasional streak (shooting star) ───────────────────────── */
+  function buildScene() {
+    buildClusters();
+    buildNebulae();
+    buildDustLanes();
+    buildStars();
+  }
+
+  /* ── Shooting stars ───────────────────────────────────────────── */
   let streaks = [];
-  function maybeStreak() {
-    if (Math.random() < 0.003 && streaks.length < 2) {
-      const angle = (Math.random() * 30 - 10) * Math.PI / 180;
+  function maybeStreak(t) {
+    if (Math.random() < 0.0025 && streaks.length < 3) {
+      const angle = (Math.random() * 25 - 5) * Math.PI / 180;
+      const brightColour = Math.random() < 0.4 ? 'rgba(200,220,255,' : 'rgba(255,248,230,';
       streaks.push({
-        x: Math.random() * W * 0.8,
-        y: Math.random() * H * 0.5,
-        len: 80 + Math.random() * 140,
-        speed: 14 + Math.random() * 10,
+        x: Math.random() * W * 0.75,
+        y: Math.random() * H * 0.55,
+        len: 90 + Math.random() * 180,
+        speed: 13 + Math.random() * 12,
         angle,
         life: 1.0,
+        colour: brightColour,
       });
     }
     streaks = streaks.filter(s => s.life > 0);
     streaks.forEach(s => {
       s.x += Math.cos(s.angle) * s.speed;
       s.y += Math.sin(s.angle) * s.speed;
-      s.life -= 0.04;
+      s.life -= 0.038;
     });
   }
 
-  /* ── Draw frame ───────────────────────────────────────────────── */
-  function draw() {
+  /* ── Draw one nebula ellipse ──────────────────────────────────── */
+  function drawNebula(n, parallaxOff) {
+    const px = n.x + parallaxOff * 0.012;
+    const py = n.y + parallaxOff * 0.006;
+    const maxR = Math.max(n.rx, n.ry);
+    const g = ctx.createRadialGradient(px, py, 0, px, py, maxR);
+    n.stops.forEach(([o, c]) => g.addColorStop(o, c));
+    ctx.save();
+    ctx.translate(px, py);
+    ctx.scale(n.rx / maxR, n.ry / maxR);
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(0, 0, maxR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  /* ── Draw dust lane silhouette ────────────────────────────────── */
+  function drawDustLane(lane) {
+    if (lane.points.length < 2) return;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(2,3,12,0.55)';
+    ctx.lineWidth = lane.width;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(lane.points[0][0], lane.points[0][1]);
+    for (let i = 1; i < lane.points.length; i++) {
+      const prev = lane.points[i-1];
+      const cur  = lane.points[i];
+      ctx.lineTo(cur[0], cur[1]);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /* ── Main draw loop ───────────────────────────────────────────── */
+  function draw(ts) {
+    time = (ts || 0) * 0.001;
     ctx.clearRect(0, 0, W, H);
 
-    // Background gradient
-    const bg = ctx.createLinearGradient(0, 0, W * 0.6, H);
-    bg.addColorStop(0,   '#03040d');
-    bg.addColorStop(0.5, '#060817');
-    bg.addColorStop(1,   '#030410');
+    // Gradient sky
+    const bg = ctx.createLinearGradient(0, 0, W * 0.55, H);
+    bg.addColorStop(0,   '#02030c');
+    bg.addColorStop(0.45,'#050715');
+    bg.addColorStop(1,   '#020410');
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
-    // Nebula blobs
-    nebulae.forEach(n => {
-      const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, Math.max(n.rx, n.ry));
-      n.stops.forEach(([o, c]) => g.addColorStop(o, c));
-      ctx.save();
-      ctx.scale(n.rx / Math.max(n.rx, n.ry), n.ry / Math.max(n.rx, n.ry));
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      const scale = Math.max(n.rx, n.ry);
-      ctx.arc(n.x / (n.rx / scale), n.y / (n.ry / scale), scale, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    });
+    // Subtle vignette
+    const vig = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.9);
+    vig.addColorStop(0, 'rgba(0,0,0,0)');
+    vig.addColorStop(1, 'rgba(0,0,0,0.55)');
+    ctx.fillStyle = vig;
+    ctx.fillRect(0, 0, W, H);
+
+    // Nebulae (back layer)
+    const parallax = Math.sin(time * 0.04) * 30;
+    nebulae.forEach(n => drawNebula(n, parallax));
+
+    // Dust lanes
+    dustLanes.forEach(l => drawDustLane(l));
 
     // Stars
     stars.forEach(s => {
-      s.a += s.da;
-      if (s.a > 0.95 || s.a < 0.15) s.da *= -1;
+      // gentle drift for a handful of stars
+      if (s.drift) {
+        s.x += s.drift.vx;
+        s.y += s.drift.vy;
+        if (s.x < 0) s.x = W; if (s.x > W) s.x = 0;
+        if (s.y < 0) s.y = H; if (s.y > H) s.y = 0;
+      }
+      // sinusoidal twinkle
+      const twinkle = Math.sin(time * s.twinkleSpeed * 1000 + s.twinkleOffset);
+      s.a = 0.3 + (twinkle * 0.5 + 0.5) * 0.65;
+
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = s.hue;
-      ctx.globalAlpha = s.a * 0.85;
+      ctx.globalAlpha = Math.min(s.a, 1);
       ctx.fill();
-      // glow for larger stars
-      if (s.r > 1.2) {
-        const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
-        glow.addColorStop(0, 'rgba(180,200,255,0.25)');
+
+      // diffraction spike for brightest stars
+      if (s.r > 2.0) {
+        ctx.globalAlpha = s.a * 0.18;
+        ctx.strokeStyle = s.hue;
+        ctx.lineWidth = 0.7;
+        const spike = s.r * 5;
+        ctx.beginPath();
+        ctx.moveTo(s.x - spike, s.y); ctx.lineTo(s.x + spike, s.y);
+        ctx.moveTo(s.x, s.y - spike); ctx.lineTo(s.x, s.y + spike);
+        ctx.stroke();
+      }
+
+      // halo glow for large stars
+      if (s.r > 1.3) {
+        const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
+        glow.addColorStop(0, s.r > 2.0 ? 'rgba(200,215,255,0.30)' : 'rgba(170,190,255,0.18)');
         glow.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.globalAlpha = s.a * 0.4;
+        ctx.globalAlpha = s.a * 0.38;
         ctx.fillStyle = glow;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.r * 5, 0, Math.PI * 2);
         ctx.fill();
       }
     });
     ctx.globalAlpha = 1;
 
     // Shooting stars
-    maybeStreak();
+    maybeStreak(time);
     streaks.forEach(s => {
       const ex = s.x - Math.cos(s.angle) * s.len;
       const ey = s.y - Math.sin(s.angle) * s.len;
       const grad = ctx.createLinearGradient(s.x, s.y, ex, ey);
-      grad.addColorStop(0,   `rgba(255,255,255,${s.life * 0.9})`);
-      grad.addColorStop(0.3, `rgba(180,210,255,${s.life * 0.4})`);
+      grad.addColorStop(0,   s.colour + (s.life * 0.92) + ')');
+      grad.addColorStop(0.25, s.colour + (s.life * 0.38) + ')');
       grad.addColorStop(1,   'rgba(0,0,0,0)');
       ctx.strokeStyle = grad;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.6;
       ctx.beginPath();
       ctx.moveTo(s.x, s.y);
       ctx.lineTo(ex, ey);
@@ -1113,11 +1208,10 @@
   }
 
   resize();
-  draw();
+  requestAnimationFrame(draw);
   window.addEventListener('resize', () => {
     cancelAnimationFrame(animId);
     resize();
-    draw();
   });
 })();
 </script>
