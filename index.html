@@ -128,6 +128,18 @@
       height: 1.5px;
       background: var(--nebula);
       transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    
+    /* Animate hamburger to X when menu is open */
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
     }
 
     /* Mobile menu */
@@ -1457,11 +1469,14 @@
 
   hamburgerBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
+    hamburgerBtn.classList.toggle('active');
   });
 
+  // Close menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
+      hamburgerBtn.classList.remove('active');
     });
   });
 </script>
