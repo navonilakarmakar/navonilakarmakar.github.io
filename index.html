@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navonila Karmakar — Astrophysicist</title>
+  <title>Navonila Karmakar</title>
   <meta name="description" content="Navonila Karmakar — Astrophysicist, BS-MS Physics student at IISER Kolkata, researcher at MPA Garching.">
   <meta name="google-site-verification" content="jyE3ePLfRKoM4Lr9zLo1V37XGMB8myWc9B3JM6dEOyU">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -100,6 +100,60 @@
       color: var(--bright) !important;
       border-color: var(--bright) !important;
     }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid var(--rim-bright);
+      cursor: pointer;
+      z-index: 300;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: var(--nebula);
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(3,4,13,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 250;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--subdued);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--bright); }
 
     /* ══ HERO ═══════════════════════════════════════════════════════ */
     #hero {
@@ -542,7 +596,8 @@
     /* ══ RESPONSIVE ═════════════════════════════════════════════════ */
     @media (max-width: 860px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
       .section { padding: 4.5rem 6vw; }
       #hero { padding: 0 6vw; padding-top: 80px; }
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -563,7 +618,7 @@
 
 <!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
 <nav>
-  <a class="nav-logo" href="#hero">Navonila Karmakar ⟋</a>
+  <a class="nav-logo" href="#hero">Navonila Karmakar</a>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
@@ -572,16 +627,31 @@
     <li><a href="#awards">Awards</a></li>
     <li><a href="#conferences">Conferences</a></li>
   </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile Menu -->
+<ul class="mobile-menu" id="mobileMenu">
+  <li><a href="#research">Research</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="#publications">Publications</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#awards">Awards</a></li>
+  <li><a href="#conferences">Conferences</a></li>
+</ul>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero">
   <p class="hero-tag">Computational Astrophysics · Observational Astronomy · Gravitational Waves</p>
   <h1 class="hero-name">Navonila<br><span>Karmakar</span></h1>
-  <p class="hero-subtitle">Final Year BS-MS Physics Student</p>
+  <p class="hero-subtitle">About me!</p>
   <p class="hero-bio">
-    Currently working at Max Planck Institute for Astrophysics, Garching and
-    studying at Indian Institute of Science Education and Research, Kolkata.
+    I am a final year BS-MS in physics student at Indian Institute of Science Education and Research, Kolkata
+    and currently working on my master's thesis at Max Planck Institute for Astrophysics, Garching, Germany.
   </p>
   <div class="hero-contacts">
     <a class="chip" href="mailto:nk22ms040@iiserkol.ac.in">nk22ms040@iiserkol.ac.in</a>
@@ -1203,6 +1273,23 @@
     resize();
   });
 })();
+</script>
+
+<!-- ═══ MOBILE MENU TOGGLE ═══════════════════════════════════════ -->
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  });
 </script>
 
 </body>
