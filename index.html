@@ -761,6 +761,7 @@
 
 <!-- Mobile Menu -->
 <ul class="mobile-menu" id="mobileMenu">
+  <button id="closeMenuBtn" style="position: absolute; top: 1.5rem; right: 1.5rem; background: transparent; border: 1px solid var(--rim-bright); color: var(--nebula); font-size: 1.3rem; width: 42px; height: 42px; cursor: pointer; z-index: 260; display: flex; align-items: center; justify-content: center; line-height: 1;">✕</button>
   <li><a href="#research">Research</a></li>
   <li><a href="#education">Education</a></li>
   <li><a href="#publications">Publications</a></li>
@@ -1466,10 +1467,18 @@
 <script>
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
 
+  // Open menu
   hamburgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    hamburgerBtn.classList.toggle('active');
+    mobileMenu.classList.add('active');
+    hamburgerBtn.classList.add('active');
+  });
+
+  // Close menu via X button
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    hamburgerBtn.classList.remove('active');
   });
 
   // Close menu when a link is clicked
