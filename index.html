@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navonila Karmakar - Personal Website</title>
+  <title>Navonila Karmakar — Personal Website</title>
   <meta name="description" content="Navonila Karmakar — Astrophysicist, BS-MS Physics student at IISER Kolkata, researcher at MPA Garching.">
   <meta name="google-site-verification" content="jyE3ePLfRKoM4Lr9zLo1V37XGMB8myWc9B3JM6dEOyU">
+  
+  <!-- Open Graph meta tags (for LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:title" content="Navonila Karmakar — Personal Website">
+  <meta property="og:description" content="BS-MS Physics student at IISER Kolkata, researcher at Max Planck Institute for Astrophysics, Garching.">
+  <meta property="og:type" content="website">
+  
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -166,22 +172,24 @@
       padding: 0 10vw;
       padding-top: 80px;
     }
-    .hero-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      color: var(--nebula);
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
+    .hero-header {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 3rem;
+      margin-bottom: 2rem;
     }
-    .hero-tag::before {
-      content: '';
-      display: inline-block;
-      width: 28px; height: 1px;
-      background: var(--nebula);
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid var(--nebula);
+      box-shadow: 0 0 20px rgba(107,156,244,0.3);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .hero-name-wrapper {
+      display: flex;
+      flex-direction: column;
     }
     .hero-name {
       font-family: var(--font-display);
@@ -190,7 +198,7 @@
       line-height: 0.95;
       color: var(--bright);
       letter-spacing: -0.01em;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.3rem;
     }
     .hero-name span {
       font-style: italic;
@@ -203,7 +211,7 @@
       font-weight: 300;
       font-size: clamp(1.2rem, 2.5vw, 1.75rem);
       color: var(--nebula);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       letter-spacing: 0.01em;
     }
     .hero-bio {
@@ -212,13 +220,54 @@
       font-weight: 300;
       color: var(--text);
       line-height: 1.85;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Research Interests */
+    .research-interests {
+      margin-bottom: 2rem;
+    }
+    .research-interests-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--nebula);
+      margin-bottom: 1rem;
+    }
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .interest-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--aurora);
+      color: var(--aurora);
+      background: var(--aurora-dim);
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+    }
+    
+    /* Contact section */
+    .contact-section {
+      margin-bottom: 2.8rem;
+    }
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
     .hero-contacts {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
-      margin-bottom: 2.8rem;
+      margin-bottom: 0.8rem;
     }
     .chip {
       font-family: var(--font-mono);
@@ -231,11 +280,13 @@
       background: rgba(255,255,255,0.02);
       letter-spacing: 0.04em;
     }
-    .chip:hover {
+    a.chip:hover {
       border-color: var(--nebula);
       color: var(--nebula);
       background: var(--nebula-dim);
     }
+    
+    /* CTA buttons */
     .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
       font-family: var(--font-mono);
@@ -436,6 +487,56 @@
       border-radius: 2px;
     }
 
+    /* ══ TALK SLIDES ══════════════════════════════════════════════ */
+    .talks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .talk-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.6rem;
+      background: var(--panel);
+      border: 1px solid var(--rim);
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .talk-info {
+      flex: 1;
+    }
+    .talk-title {
+      font-weight: 500;
+      color: var(--bright);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .talk-venue {
+      font-size: 0.82rem;
+      color: var(--nebula);
+    }
+    .talk-date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+    .talk-link {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.35rem 1rem;
+      border: 1px solid var(--nebula);
+      color: var(--nebula);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .talk-link:hover {
+      background: var(--nebula-dim);
+      color: var(--bright);
+    }
+
     /* ══ EDUCATION ══════════════════════════════════════════════════ */
     .edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
     .edu-item {
@@ -600,12 +701,22 @@
       .hamburger { display: flex; }
       .section { padding: 4.5rem 6vw; }
       #hero { padding: 0 6vw; padding-top: 80px; }
+      .hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
       .exp-item::before, .exp-item::after { display: none; }
       .exp-body { padding-left: 0; border-left: 2px solid var(--rim-bright); padding-left: 1rem; }
       .conf-list { columns: 1; }
       .edu-item { grid-template-columns: 1fr; }
       .edu-grade { text-align: left; }
+      .talk-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -623,9 +734,11 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#conferences">Conferences</a></li>
+    <li><a class="nav-cv" href="Navonila_Karmakar_CV.pdf" target="_blank">CV ↓</a></li>
   </ul>
   <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
     <span></span>
@@ -639,24 +752,58 @@
   <li><a href="#research">Research</a></li>
   <li><a href="#education">Education</a></li>
   <li><a href="#publications">Publications</a></li>
+  <li><a href="#talks">Talks</a></li>
   <li><a href="#skills">Skills</a></li>
   <li><a href="#awards">Awards</a></li>
   <li><a href="#conferences">Conferences</a></li>
+  <li><a href="Navonila_Karmakar_CV.pdf" target="_blank">Download my CV</a></li>
 </ul>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero">
-  <p class="hero-tag">Computational Astrophysics · Observational Astronomy · Gravitational Waves</p>
-  <h1 class="hero-name">Navonila<br><span>Karmakar</span></h1>
-  <p class="hero-subtitle">About me!</p>
-  <p class="hero-bio">
-    I am a final year BS-MS in physics student at Indian Institute of Science Education and Research, Kolkata
-    and currently working on my master's thesis at Max Planck Institute for Astrophysics, Garching, Germany.
-  </p>
-  <div class="hero-contacts">
-    <a class="chip" href="mailto:nk22ms040@iiserkol.ac.in">nk22ms040@iiserkol.ac.in</a>
-    <a class="chip" href="mailto:karmakar@MPA-Garching.MPG.DE">karmakar@MPA-Garching.MPG.DE</a>
+  <div class="hero-header">
+    <img src="profile_photo.jpg" alt="Navonila Karmakar" class="profile-photo">
+    <div class="hero-name-wrapper">
+      <h1 class="hero-name">Navonila<br><span>Karmakar</span></h1>
+    </div>
   </div>
+  
+  <p class="hero-subtitle">About me</p>
+  <p class="hero-bio">
+    I am a final year BS-MS in physics student at IISER Kolkata and working on my masters thesis at Max Planck Institute for Astrophysics, Garching.
+  </p>
+  
+  <!-- Research Interests -->
+  <div class="research-interests">
+    <p class="research-interests-title">Research Interests</p>
+    <div class="interest-tags">
+      <span class="interest-tag">Galaxy Formation & Evolution</span>
+      <span class="interest-tag">Circumgalactic Medium</span>
+      <span class="interest-tag">Hydrodynamic Simulations</span>
+      <span class="interest-tag">Stellar Populations</span>
+      <span class="interest-tag">Star Formation</span>
+      <span class="interest-tag">Gravitational Waves</span>
+      <span class="interest-tag">Compact Objects</span>
+      <span class="interest-tag">Observational Astronomy</span>
+    </div>
+  </div>
+  
+  <!-- Contact Info -->
+  <div class="contact-section">
+    <p class="contact-label">Contact info:</p>
+    <div class="hero-contacts">
+      <span class="chip">nk22ms040@iiserkol.ac.in</span>
+      <span class="chip">karmakar@MPA-Garching.MPG.DE</span>
+      <a class="chip" href="https://www.linkedin.com/in/navonila-karmakar-72595b257" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  
+  <!-- CTA Buttons -->
+  <div class="cta-row">
+    <a href="cv.pdf" class="btn-cv" target="_blank">📄 Download my CV</a>
+  </div>
+  
+  <div class="scroll-cue">scroll · explore</div>
 </section>
 
 <!-- ═══ RESEARCH EXPERIENCE ══════════════════════════════════════════ -->
@@ -889,6 +1036,53 @@
   </div>
 </section>
 
+<!-- ═══ TALK SLIDES ════════════════════════════════════════════════ -->
+<section class="section" id="talks">
+  <p class="sec-label">Presentation</p>
+  <h2 class="sec-heading">Talk Slides</h2>
+  <div class="talks-list">
+    <!-- Replace Google Drive links with your actual links -->
+    <div class="talk-item">
+      <div class="talk-info">
+        <p class="talk-title">Singularity Student Student Talks</p>
+        <p class="talk-venue">IISER Kolkata, India</p>
+        <p class="talk-date">October 2025, January 2026</p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="https://docs.google.com/presentation/d/1ooKvBnZfGXD3oe7ZiZlSpOss4Av-0EKnbMaJje1mEqI/edit?usp=sharing" class="talk-link" target="_blank">Career Opprtunities in A&A(for undergrads): Slides ↗</a>
+        <a href="https://docs.google.com/presentation/d/1FA-bKLEWgOc6fSSWVJZODDOIM54gjfzxjbt4EcwdpdU/edit?usp=sharing" class="talk-link" target="_blank">LIGO GET-GO Project: Slides ↗</a>
+      </div>
+    </div>
+    <div class="talk-item">
+      <div class="talk-info">
+        <p class="talk-title">Glitch Mitigation in Precessing Gravitational-Wave Searches</p>
+        <p class="talk-venue">LIGO GET-GO Student Conference, University of Glasgow and University of Portsmouth</p>
+        <p class="talk-date">July, August 2025</p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="https://drive.google.com/file/d/1fMjbCilzvh9GtdMsSfasLP-3Xq_9QhmD/view?usp=drivesdk" class="talk-link" target="_blank">UoG: Slides ↗</a>
+        <a href="https://drive.google.com/file/d/1y6pzOWdMqsz3amBw1IEDK5a5x_xwjakr/view?usp=drivesdk" class="talk-link" target="_blank">UoP: Slides ↗</a>
+      </div>
+    </div>
+    <div class="talk-item">
+      <div class="talk-info">
+        <p class="talk-title">Star Formation in Young Cluster NGC 2316</p>
+        <p class="talk-venue">ARIES, Nainital — Summer Internship</p>
+        <p class="talk-date">July 2024</p>
+      </div>
+      <a href="https://drive.google.com/file/d/1Mwb1A4SAL1Qgo1UaGlkclSiVVRH0qH6w/view?usp=drivesdk" class="talk-link" target="_blank">Report ↗</a>
+    </div>
+    <div class="talk-item">
+      <div class="talk-info">
+        <p class="talk-title">Structural & Morphological Analysis of Galaxies</p>
+        <p class="talk-venue">IISER Kolkata, Astronomy Lab Semester Project</p>
+        <p class="talk-date">May 2026</p>
+      </div>
+      <a href="https://drive.google.com/file/d/1S5zh3QmIj9Tc90jgt7elg1Xyl2lFaYab/view?usp=drivesdk" class="talk-link" target="_blank">Report ↗</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ SKILLS ══════════════════════════════════════════════════════ -->
 <section class="section" id="skills">
   <p class="sec-label">Technical</p>
@@ -930,6 +1124,13 @@
       <div class="skill-tags">
         <span class="skill-tag">English</span><span class="skill-tag">Bengali</span>
         <span class="skill-tag">Hindi</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Extracurricular</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Art</span>
+        <span class="skill-tag">Photography</span>
       </div>
     </div>
   </div>
@@ -1006,7 +1207,7 @@
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══════════════════════════════════════════════════════ -->
+<!-- ═══ FOOTER ═══════════════════════════════════════════════════ -->
 <footer>
   <p class="footer-name">Navonila Karmakar</p>
   <p class="footer-note">MPA Garching · IISER Kolkata · 2026</p>
@@ -1026,7 +1227,6 @@
     buildScene();
   }
 
-  /* ── Deep-field star clusters (tight dense patches) ──────────── */
   function buildClusters() {
     clusters = [
       { x: W * 0.68, y: H * 0.22, count: 60, spread: 60, bright: 0.55 },
@@ -1035,7 +1235,6 @@
     ];
   }
 
-  /* ── Dust lane paths (dark silhouettes crossing nebulae) ──────── */
   function buildDustLanes() {
     dustLanes = [
       { points: [[W*0.55, H*0.0], [W*0.62, H*0.25], [W*0.50, H*0.45], [W*0.58, H*0.65]], width: 38 },
@@ -1043,31 +1242,23 @@
     ];
   }
 
-  /* ── Layered nebula blobs ─────────────────────────────────────── */
   function buildNebulae() {
     nebulae = [
-      // large violet-indigo emission region top-right
       { x: W*0.80, y: H*0.16, rx: W*0.42, ry: H*0.38,
         stops: [[0,'rgba(90,55,200,0.22)'],[0.35,'rgba(60,35,160,0.13)'],[0.7,'rgba(30,15,90,0.06)'],[1,'rgba(0,0,0,0)']] },
-      // secondary magenta tendril centre-right
       { x: W*0.72, y: H*0.50, rx: W*0.28, ry: H*0.30,
         stops: [[0,'rgba(170,60,140,0.13)'],[0.4,'rgba(120,40,100,0.07)'],[1,'rgba(0,0,0,0)']] },
-      // cyan-blue cloud left
       { x: W*0.20, y: H*0.50, rx: W*0.34, ry: H*0.32,
         stops: [[0,'rgba(40,100,210,0.16)'],[0.45,'rgba(25,70,170,0.08)'],[1,'rgba(0,0,0,0)']] },
-      // warm H-alpha glow bottom-centre
       { x: W*0.50, y: H*0.90, rx: W*0.30, ry: H*0.26,
         stops: [[0,'rgba(200,75,45,0.12)'],[0.5,'rgba(160,50,28,0.06)'],[1,'rgba(0,0,0,0)']] },
-      // teal accent upper-left
       { x: W*0.06, y: H*0.10, rx: W*0.22, ry: H*0.20,
         stops: [[0,'rgba(35,150,155,0.10)'],[0.5,'rgba(20,110,120,0.05)'],[1,'rgba(0,0,0,0)']] },
-      // deep gold pillar mid-left
       { x: W*0.30, y: H*0.30, rx: W*0.14, ry: H*0.22,
         stops: [[0,'rgba(200,155,40,0.08)'],[0.5,'rgba(160,120,30,0.04)'],[1,'rgba(0,0,0,0)']] },
     ];
   }
 
-  /* ── Stars ────────────────────────────────────────────────────── */
   function buildStars() {
     const N = Math.floor((W * H) / 2600);
     stars = Array.from({ length: N }, () => {
@@ -1075,8 +1266,7 @@
       const r = tier < 0.65 ? 0.35 + Math.random() * 0.45
                : tier < 0.88 ? 0.85 + Math.random() * 0.65
                : tier < 0.97 ? 1.5  + Math.random() * 1.0
-               : 2.2 + Math.random() * 1.4;          // rare bright giants
-      // cluster placement — some stars biased toward cluster positions
+               : 2.2 + Math.random() * 1.4;
       let x, y;
       const inCluster = Math.random() < 0.18 && clusters.length;
       if (inCluster) {
@@ -1090,11 +1280,11 @@
         y = Math.random() * H;
       }
       const spectral = Math.random();
-      const hue = spectral < 0.18 ? '#ffd0b0'   // K/M orange-red
-                : spectral < 0.38 ? '#fff4e0'   // G yellow-white
-                : spectral < 0.65 ? '#eef2ff'   // A white
-                : spectral < 0.88 ? '#c8d8ff'   // B blue-white
-                : '#aac8ff';                     // O deep blue
+      const hue = spectral < 0.18 ? '#ffd0b0'
+                : spectral < 0.38 ? '#fff4e0'
+                : spectral < 0.65 ? '#eef2ff'
+                : spectral < 0.88 ? '#c8d8ff'
+                : '#aac8ff';
       return {
         x, y, r,
         a: 0.25 + Math.random() * 0.75,
@@ -1114,7 +1304,6 @@
     buildStars();
   }
 
-  /* ── Shooting stars ───────────────────────────────────────────── */
   let streaks = [];
   function maybeStreak(t) {
     if (Math.random() < 0.0025 && streaks.length < 3) {
@@ -1138,7 +1327,6 @@
     });
   }
 
-  /* ── Draw one nebula ellipse ──────────────────────────────────── */
   function drawNebula(n, parallaxOff) {
     const px = n.x + parallaxOff * 0.012;
     const py = n.y + parallaxOff * 0.006;
@@ -1155,7 +1343,6 @@
     ctx.restore();
   }
 
-  /* ── Draw dust lane silhouette ────────────────────────────────── */
   function drawDustLane(lane) {
     if (lane.points.length < 2) return;
     ctx.save();
@@ -1174,12 +1361,10 @@
     ctx.restore();
   }
 
-  /* ── Main draw loop ───────────────────────────────────────────── */
   function draw(ts) {
     time = (ts || 0) * 0.001;
     ctx.clearRect(0, 0, W, H);
 
-    // Gradient sky
     const bg = ctx.createLinearGradient(0, 0, W * 0.55, H);
     bg.addColorStop(0,   '#02030c');
     bg.addColorStop(0.45,'#050715');
@@ -1187,30 +1372,24 @@
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
-    // Subtle vignette
     const vig = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.9);
     vig.addColorStop(0, 'rgba(0,0,0,0)');
     vig.addColorStop(1, 'rgba(0,0,0,0.55)');
     ctx.fillStyle = vig;
     ctx.fillRect(0, 0, W, H);
 
-    // Nebulae (back layer)
     const parallax = Math.sin(time * 0.04) * 30;
     nebulae.forEach(n => drawNebula(n, parallax));
 
-    // Dust lanes
     dustLanes.forEach(l => drawDustLane(l));
 
-    // Stars
     stars.forEach(s => {
-      // gentle drift for a handful of stars
       if (s.drift) {
         s.x += s.drift.vx;
         s.y += s.drift.vy;
         if (s.x < 0) s.x = W; if (s.x > W) s.x = 0;
         if (s.y < 0) s.y = H; if (s.y > H) s.y = 0;
       }
-      // sinusoidal twinkle
       const twinkle = Math.sin(time * s.twinkleSpeed * 1000 + s.twinkleOffset);
       s.a = 0.3 + (twinkle * 0.5 + 0.5) * 0.65;
 
@@ -1220,7 +1399,6 @@
       ctx.globalAlpha = Math.min(s.a, 1);
       ctx.fill();
 
-      // diffraction spike for brightest stars
       if (s.r > 2.0) {
         ctx.globalAlpha = s.a * 0.18;
         ctx.strokeStyle = s.hue;
@@ -1232,7 +1410,6 @@
         ctx.stroke();
       }
 
-      // halo glow for large stars
       if (s.r > 1.3) {
         const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
         glow.addColorStop(0, s.r > 2.0 ? 'rgba(200,215,255,0.30)' : 'rgba(170,190,255,0.18)');
@@ -1246,7 +1423,6 @@
     });
     ctx.globalAlpha = 1;
 
-    // Shooting stars
     maybeStreak(time);
     streaks.forEach(s => {
       const ex = s.x - Math.cos(s.angle) * s.len;
@@ -1284,7 +1460,6 @@
     mobileMenu.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
