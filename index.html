@@ -611,6 +611,73 @@
       letter-spacing: 0.1em;
     }
 
+        /* ══ TELESCOPE PROPOSALS ══════════════════════════════════════ */
+    .proposal-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .proposal-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 3rem;
+      padding: 2rem;
+      background: var(--panel);
+      border: 1px solid var(--rim);
+      border-left: 3px solid var(--gold);
+      position: relative;
+    }
+    .proposal-meta {
+      display: flex;
+      flex-direction: column;
+    }
+    .proposal-role {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .proposal-period {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+    }
+    .proposal-body {
+      padding-left: 0;
+    }
+    .proposal-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--bright);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .proposal-telescope {
+      font-size: 0.85rem;
+      color: var(--nebula);
+      margin-bottom: 0.4rem;
+    }
+    .proposal-team {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--subdued);
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .proposal-item {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding: 1.5rem;
+      }
+    }
+    
     /* ══ SKILLS ═════════════════════════════════════════════════════ */
     .skills-grid {
       display: grid;
@@ -746,6 +813,7 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#proposals">Proposals</a></li>
     <li><a href="#talks">Talks</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
@@ -765,6 +833,7 @@
   <li><a href="#research">Research</a></li>
   <li><a href="#education">Education</a></li>
   <li><a href="#publications">Publications</a></li>
+  <li><a href="#proposals">Proposals</a></li>
   <li><a href="#talks">Talks</a></li>
   <li><a href="#skills">Skills</a></li>
   <li><a href="#awards">Awards</a></li>
@@ -994,6 +1063,41 @@
           <span class="exp-tag">Compact Objects</span>
           <span class="exp-tag">Literature Review</span>
         </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TELESCOPE PROPOSALS ════════════════════════════════════════ -->
+<section class="section" id="proposals">
+  <p class="sec-label">Proposals</p>
+  <h2 class="sec-heading">Telescope Proposals</h2>
+  <div class="proposal-list">
+    
+    <!-- Proposal 1: HST -->
+    <div class="proposal-item">
+      <div class="proposal-meta">
+        <p class="proposal-role">Co-Investigator</p>
+        <p class="proposal-period">Cycle 34 · Submitted 2026</p>
+      </div>
+      <div class="proposal-body">
+        <p class="proposal-title">"A Goldilocks Cluster: The Structure and Evolution of a Recently Discovered Galactic Red Supergiant Cluster"</p>
+        <p class="proposal-telescope">Hubble Space Telescope · General Observer Proposal</p>
+        <p class="proposal-team">PI: Dr. Morten Andersen &ensp;|&ensp; CoPI: Dr. Megan Reiter</p>
+      </div>
+    </div>
+
+    <!-- Proposal 2: Gemini -->
+    <div class="proposal-item">
+      <div class="proposal-meta">
+        <p class="proposal-role">Co-Investigator</p>
+        <p class="proposal-period">March 2025</p>
+      </div>
+      <div class="proposal-body">
+        <p class="proposal-title">"Stellar Mass Content of a Recently Discovered Cluster Barbá 2"</p>
+        <p class="proposal-telescope">Gemini Observatory · FLAMINGOS-2 &ensp;|&ensp; Program ID: GS-2025A-FT-204</p>
+        <p class="proposal-team">PI: Dr. Morten Andersen</p>
       </div>
     </div>
 
