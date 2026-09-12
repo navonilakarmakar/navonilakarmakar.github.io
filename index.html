@@ -611,73 +611,6 @@
       letter-spacing: 0.1em;
     }
 
-        /* ══ TELESCOPE PROPOSALS ══════════════════════════════════════ */
-    .proposal-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    .proposal-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 0 3rem;
-      padding: 2rem;
-      background: var(--panel);
-      border: 1px solid var(--rim);
-      border-left: 3px solid var(--gold);
-      position: relative;
-    }
-    .proposal-meta {
-      display: flex;
-      flex-direction: column;
-    }
-    .proposal-role {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .proposal-period {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      line-height: 1.5;
-    }
-    .proposal-body {
-      padding-left: 0;
-    }
-    .proposal-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--bright);
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-    .proposal-telescope {
-      font-size: 0.85rem;
-      color: var(--nebula);
-      margin-bottom: 0.4rem;
-    }
-    .proposal-team {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--subdued);
-      letter-spacing: 0.04em;
-    }
-
-    /* Responsive */
-    @media (max-width: 860px) {
-      .proposal-item {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-        padding: 1.5rem;
-      }
-    }
-    
     /* ══ SKILLS ═════════════════════════════════════════════════════ */
     .skills-grid {
       display: grid;
@@ -813,7 +746,6 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#proposals">Proposals</a></li>
     <li><a href="#talks">Talks</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
@@ -833,7 +765,6 @@
   <li><a href="#research">Research</a></li>
   <li><a href="#education">Education</a></li>
   <li><a href="#publications">Publications</a></li>
-  <li><a href="#proposals">Proposals</a></li>
   <li><a href="#talks">Talks</a></li>
   <li><a href="#skills">Skills</a></li>
   <li><a href="#awards">Awards</a></li>
@@ -913,7 +844,6 @@
           post-processing with <em>ParaView</em>, and comparing results against analytic cloud-crushing models.
         </p>
         <div class="exp-tags">
-          <span class="exp-tag">OpenGadget3</span>
           <span class="exp-tag">PLUTO</span>
           <span class="exp-tag">ParaView</span>
           <span class="exp-tag">Python</span>
@@ -923,7 +853,30 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- Independent Study -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-period">August 2026 –<br>Present</p>
+        <p class="exp-type">Independent Study</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Bayesian Inference for Gravitational-Wave Parameter Estimation</p>
+        <p class="exp-institute">IISER Kolkata, India</p>
+        <p class="exp-supervisor">Supervisor: Prof. Rajesh Kumble Nayak</p>
+        <p class="exp-desc">
+          Semester-long independent study on Bayesian inference techniques applied to parameter estimation of
+          gravitational-wave signals, covering the statistical framework underlying source characterisation from
+          detector data.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Bayesian Inference</span>
+          <span class="exp-tag">Gravitational Waves</span>
+          <span class="exp-tag">Parameter Estimation</span>
+        </div>
+      </div>
+    </div>
+    
     <!-- 2 -->
     <div class="exp-item">
       <div class="exp-meta">
@@ -949,7 +902,7 @@
           <span class="exp-tag">Astropy</span>
           <span class="exp-tag">2MASS</span>
           <span class="exp-tag">IR Photometry</span>
-          <span class="exp-tag">Stellar Clusters</span>
+          <span class="exp-tag">Star Clusters</span>
         </div>
       </div>
     </div>
@@ -1110,32 +1063,17 @@
 <section class="section" id="publications">
   <p class="sec-label">Research Output</p>
   <h2 class="sec-heading">Publications</h2>
-  <div class="pub-card">
-    <p class="pub-title">The infrared view of the Galactic star cluster Barba 2:<br>The low and intermediate mass content</p>
-    <p class="pub-authors">M. Andersen, N. Karmakar, S. Millstone</p>
-    <p class="pub-status">● In preparation</p>
-  </div>
-</section>
-
-<!-- ═══ TELESCOPE PROPOSALS ════════════════════════════════════════ -->
-<section class="section" id="proposals">
-  <p class="sec-label">Proposals</p>
-  <h2 class="sec-heading">Observing Proposals</h2>
-  <div class="proposal-list">
-
-    <!-- Proposal 2: Gemini -->
-    <div class="proposal-item">
-      <div class="proposal-meta">
-        <p class="proposal-role">Co-Investigator</p>
-        <p class="proposal-period">March 2025</p>
-      </div>
-      <div class="proposal-body">
-        <p class="proposal-title">Stellar Mass Content of a Recently Discovered Cluster Barbá 2</p>
-        <p class="proposal-telescope">Gemini Observatory · FLAMINGOS-2 &ensp;|&ensp; Program ID: GS-2025A-FT-204</p>
-        <p class="proposal-team">PI: Dr. Morten Andersen</p>
-      </div>
+  <div class="edu-list">
+    <div class="pub-card">
+      <p class="pub-title">Fragmented in the flow: survival of fractal cloud complexes in expanding galactic outflows</p>
+      <p class="pub-authors">Navonila Karmakar, Alankar Dutta et al.</p>
+      <p class="pub-status">● In preparation, 2027</p>
     </div>
-
+    <div class="pub-card">
+      <p class="pub-title">The infrared view of the Galactic star cluster Barba 2:<br>The low and intermediate mass content</p>
+      <p class="pub-authors">M. Andersen, N. Karmakar, S. Millstone et al.</p>
+      <p class="pub-status">● In preparation, 2026</p>
+    </div>
   </div>
 </section>
   
